@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ujmn2sd3d8bp"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_j6bmu"]
+[ext_resource type="Script" path="res://scenes/player/head.gd" id="2_1cb5p"]
+[ext_resource type="AudioStream" uid="uid://cloka37c0wfbe" path="res://sounds/huh.ogg" id="3_pefjp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cxt83"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_j6bmu")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_cxt83")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+script = ExtResource("2_1cb5p")
+
+[node name="Camera" type="Camera3D" parent="Head"]
+current = true
+fov = 85.0
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pefjp")
+volume_db = -20.0

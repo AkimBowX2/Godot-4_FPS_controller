@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyvwwwookthfp"]
+
+[ext_resource type="PackedScene" uid="uid://c4p48qkr206em" path="res://scenes/maps/map.tscn" id="1_ibd2x"]
+[ext_resource type="PackedScene" uid="uid://ujmn2sd3d8bp" path="res://scenes/player/player.tscn" id="2_pnn2l"]
+
+[node name="Main" type="Node"]
+
+[node name="Map" parent="." instance=ExtResource("1_ibd2x")]
+
+[node name="Player" parent="." instance=ExtResource("2_pnn2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
